@@ -69,7 +69,7 @@ const bloggers = [
       "Рекламная интеграция"
     ]
   },
-
+  // Showshotime
   {
     id: 3,
     gender: "Женщина",
@@ -182,7 +182,7 @@ const bloggers = [
       "Рекламная интеграция"
     ]
   },
-
+  // Taj Deeshay
   {
     id: 7,
     gender: "Мужчина",
