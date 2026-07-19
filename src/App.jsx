@@ -5,7 +5,7 @@ import BloggerProfile from "./pages/BloggerProfile";
 import BloggersPage from "./pages/BloggersPage";
 import Contacts from "./pages/Contacts";
 import Footer from "./components/Footer";
-import SMM from "./pages/SMM";
+import SMM from "./pages/Smm";
 import AddBlogger from "./pages/AddBlogger";
 
 function App() {
