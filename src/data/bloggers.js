@@ -85,7 +85,7 @@ const bloggers = [
     tiktok: "—",
     youtube: "—",
     price: 0,
-    image: Showshotime,
+    image: showshotime,
     description:
       "Развлекательный блогер и создатель digital-контента.",
     views: "—",
@@ -194,7 +194,7 @@ const bloggers = [
     tiktok: "—",
     youtube: "—",
     price: 0,
-    image: Deeshay,
+    image: DeeShay,
     description:
       "Digital-креатор и автор развлекательного контента.",
     views: "—",
