@@ -34,7 +34,7 @@ function Footer() {
           </a>
 
           <a href="/contacts">
-            Связаться с нами
+            Связаться с нами 
           </a>
         </div>
 
