@@ -8,6 +8,7 @@ function Bloggers() {
   const [bloggers, setBloggers] = useState(bloggersData);
   const [category, setCategory] = useState("");
   const [gender, setGender] = useState("");
+
   function searchBloggers(text) {
     const searchText = text.toLowerCase().trim();
 
@@ -34,25 +35,86 @@ function Bloggers() {
   });
 
   return (
-    <section className="bloggers">
-      <h2>Популярные блогеры</h2>
+    <main className="bloggers-page">
 
-      <Search onSearch={searchBloggers} />
+      {/* HEADER */}
+      <section className="bloggers-hero">
+        <div className="bloggers-hero-content">
 
-      <Filter
-        setCategory={setCategory}
-        setGender={setGender}
-      />
+          <span className="section-label">
+            MEDIAHUB TJ / CREATORS
+          </span>
 
-      <div className="blogger-grid">
-        {filtered.map((blogger) => (
-          <BloggerCard
-            key={blogger.id}
-            blogger={blogger}
-          />
-        ))}
-      </div>
-    </section>
+          <h1>
+            Найди блогера
+            <br />
+            <span>для своей рекламы</span>
+          </h1>
+
+          <p>
+            Исследуй блогеров Таджикистана,
+            сравнивай аудиторию и находи подходящего
+            автора для продвижения своего бренда.
+          </p>
+
+        </div>
+      </section>
+
+      {/* BLOGGERS */}
+      <section className="bloggers">
+
+        <div className="bloggers-section-header">
+          <div>
+            <span className="section-label">
+              КАТАЛОГ БЛОГЕРОВ
+            </span>
+
+            <h2>
+              Все блогеры
+            </h2>
+          </div>
+
+          <span className="bloggers-count">
+            Найдено: {filtered.length}
+          </span>
+        </div>
+
+        <Search onSearch={searchBloggers} />
+
+        <Filter
+          setCategory={setCategory}
+          setGender={setGender}
+        />
+
+        <div className="blogger-grid">
+
+          {filtered.length > 0 ? (
+
+            filtered.map((blogger) => (
+              <BloggerCard
+                key={blogger.id}
+                blogger={blogger}
+              />
+            ))
+
+          ) : (
+
+            <div className="no-bloggers">
+              <h3>Блогеры не найдены</h3>
+
+              <p>
+                Попробуйте изменить поисковый запрос
+                или фильтры.
+              </p>
+            </div>
+
+          )}
+
+        </div>
+
+      </section>
+
+    </main>
   );
 }
 

@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import {
   FaInstagram,
@@ -13,7 +14,8 @@ import bloggers from "../data/bloggers";
 
 
 function BloggerProfile() {
-
+  
+  const navigate = useNavigate();
   const { id } = useParams();
 
 
@@ -43,14 +45,12 @@ function BloggerProfile() {
 
     <div className="profile-page">
 
-
-      <Link
-        to="/"
+      <button
+        onClick={() => navigate(-1)}
         className="back-button"
       >
         ← Назад к блогерам
-      </Link>
-
+      </button>
 
       <div className="profile-card">
 

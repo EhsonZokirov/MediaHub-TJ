@@ -1,28 +1,49 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../images/LogoMediaHub.png";
+
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
 
-      <Link to="/" className="navbar-logo">
+      {/* ЛОГОТИП */}
+      <Link to="/" className="navbar-logo" onClick={closeMenu}>
         <img src={Logo} alt="MediaHub TJ" />
       </Link>
-      {/* <a href="/" className="logo">
-        Media<span>Hub</span>
-      </a> */}
 
-      <div className="nav-links">
-        <a href="/bloggers">
+      {/* КНОПКА МОБИЛЬНОГО МЕНЮ */}
+      <button
+        className="menu-button"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Открыть меню"
+      >
+        {menuOpen ? "✕" : "☰"}
+      </button>
+
+      {/* НАВИГАЦИЯ */}
+      <div className={`nav-links ${menuOpen ? "active" : ""}`}>
+
+        <Link to="/bloggers" onClick={closeMenu}>
           Блогеры
-        </a>
+        </Link>
 
-        <a href="/smm">
+        <Link to="/smm" onClick={closeMenu}>
           SMM
-        </a>
+        </Link>
 
-        <a href="Contacts">
+        <Link to="/add-blogger" onClick={closeMenu}>
+          Добавить блогера
+        </Link>
+
+        <Link to="/contacts" onClick={closeMenu}>
           Контакты
-        </a>
+        </Link>
 
       </div>
 

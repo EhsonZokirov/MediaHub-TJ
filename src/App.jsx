@@ -7,11 +7,12 @@ import Contacts from "./pages/Contacts";
 import Footer from "./components/Footer";
 import SMM from "./pages/Smm";
 import AddBlogger from "./pages/AddBlogger";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
-
+      <ScrollToTop />
       <Routes>
 
         <Route
